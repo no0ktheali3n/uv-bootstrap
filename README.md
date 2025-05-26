@@ -1,4 +1,4 @@
-# 🧬 Dev Bootstrap
+# 🧬 UV Bootstrap
 
 A lightweight, reproducible Python development environment using [`uv`](https://github.com/astral-sh/uv) for dependency management and virtual environments.  Includes QoL profiles compatibile with Powershell 5 and 7.1+.  This setup also makes use of Just commands and will likely implement FZF in a later version. 
 
