@@ -138,9 +138,9 @@ DEBUG=true
 
 ```
 
-## 🛠️ Developer Setup (Optional Utilities and QoL enhancements)
+# 🛠️ Developer Setup (Optional Utilities and QoL enhancements)
 
-# 🧪 To enable auto-activation of `.venv` or `.uv` environments in PowerShell 5 or 7:
+## 🧪 To enable auto-activation of `.venv` or `.uv` environments in PowerShell 5 or 7:
 
 ```powershell
 irm https://raw.githubusercontent.com/no0ktheali3n/dev-bootstrap/main/powershell/install.ps1 | iex
@@ -160,7 +160,7 @@ powershell -ExecutionPolicy Bypass -File powershell\install.ps1
 
 
 
-# 🧪 To enable streamlined command execution with [`just`](https://github.com/casey/just) and fuzzy task selection with [`fzf`](https://github.com/junegunn/fzf), run the following in PowerShell:
+## 🧪 To enable streamlined command execution with [`just`](https://github.com/casey/just) and fuzzy task selection with [`fzf`](https://github.com/junegunn/fzf), run the following in PowerShell:
 
 
 ```powershell
@@ -177,13 +177,13 @@ scoop install fzf     # Fuzzy finder (for optional interactive command selection
 - \`justfile\` for simplified task runners: 
 (\`just compile\`,\`just sync\`, \`just upgrade\`, \`just init-projectfiles\`, \`just init-env\`, \`just activate\`, \`just run\`)
 
-compile:            compiles lockfile from requirements.in
-sync:               syncs environment to match lockfile dependencies
-upgrade:            upgrades all dependencies and syncs environment
-init-projectfiles:  sets up .gitignore, pyproject.toml, requirements.in, example.env, README.md
-init-env:           sets up .env from example.env
-activate:           activates venv container(only necessary if using PS5.x)
-run:                syncs the environment dependencies and runs main app (doesn't run anything by default)
+-compile:            compiles lockfile from requirements.in
+-sync:               syncs environment to match lockfile dependencies
+-upgrade:            upgrades all dependencies and syncs environment
+-init-projectfiles:  sets up .gitignore, pyproject.toml, requirements.in, example.env, README.md
+-init-env:           sets up .env from example.env
+-activate:           activates venv container(only necessary if using PS5.x)
+-run:                syncs the environment dependencies and runs main app (doesn't run anything by default)
 
 ---
 
@@ -192,25 +192,25 @@ run:                syncs the environment dependencies and runs main app (doesn'
 ### ➕ Add a new dependency
 1. Append it to \`requirements.in\`  
 2. Run (or use \`just compile\` then \`just sync`\):
-   \`\`\`bash
+   ```bash
    uv pip compile requirements.in > requirements.lock.txt
    uv pip sync requirements.lock.txt
-   \`\`\`
+   ```
 
 ### 🔼 Upgrade all dependencies (or use \`just upgrade\`)
-\`\`\`bash
+```bash
 uv pip compile --upgrade requirements.in > requirements.lock.txt
 uv pip sync requirements.lock.txt
-\`\`\`
+```
 
 ---
 
 ## 📦 Environment Variables
 
 Copy the \`.env.example\` and customize (or use \`just init-env\` for this step):
-\`\`\`bash
+```bash
 cp .env.example .env
-\`\`\`
+```
 
 Use a library like \`python-dotenv\` to load them into your Python runtime.
 
