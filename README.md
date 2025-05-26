@@ -6,7 +6,7 @@ A lightweight, reproducible Python development environment using [`uv`](https://
 
 ## 📁 Project Structure
 
-\`\`\`plaintext
+```plaintext
 my-uv-project/
 ├── .gitignore                  # Ignore venv, lockfiles, cache
 ├── pyproject.toml              # Project metadata (optional)
@@ -24,37 +24,37 @@ my-uv-project/
 
 ├── utils/                      # local Python workflow tools/scripts
 │   └── justfile
-\`\`\`
+```
 
 ---
 
 ## ⚙️ Setup Instructions
 
 1. **Clone the repo**
-   \`\`\`bash
+```bash
    git clone https://github.com/no0ktheali3n/dev-bootstrap.git
    cd dev-bootstrap
-   \`\`\`
+```
 
 2. **Create the virtual environment (first time only)**
-   \`\`\`bash
+```bash
    uv venv
-   \`\`\`
+```
 
 3. **Install top-level dependencies**
-   \`\`\`bash
+```bash
    uv pip install -r requirements.in
-   \`\`\`
+```
 
 4. **Compile lockfile from .in**
-   \`\`\`bash
+```bash
    uv pip compile requirements.in > requirements.lock.txt
-   \`\`\`
+```
 
 5. **Sync from lockfile (recommended for reproducibility), ensures environment dependencies synced**
-   \`\`\`bash
+```bash
    uv pip sync requirements.lock.txt
-   \`\`\`
+```
 
 
 ## Manual Setup Steps (now automated with \`just init-projectfiles\`)
@@ -174,16 +174,16 @@ scoop install just    # Task runner (like make, but better)
 scoop install fzf     # Fuzzy finder (for optional interactive command selection)
 ```
 
-- \`justfile\` for simplified task runners: 
-(\`just compile\`,\`just sync\`, \`just upgrade\`, \`just init-projectfiles\`, \`just init-env\`, \`just activate\`, \`just run\`)
+- `justfile` for simplified task runners:   
+([`just compile`],[`just sync`], [`just upgrade`], [`just init-projectfiles`], [`just init-env`], [`just activate`], [`just run`])
 
--compile:            compiles lockfile from requirements.in
--sync:               syncs environment to match lockfile dependencies
--upgrade:            upgrades all dependencies and syncs environment
--init-projectfiles:  sets up .gitignore, pyproject.toml, requirements.in, example.env, README.md
--init-env:           sets up .env from example.env
--activate:           activates venv container(only necessary if using PS5.x)
--run:                syncs the environment dependencies and runs main app (doesn't run anything by default)
+-`compile`:            compiles lockfile from requirements.in  
+-`sync`:               syncs environment to match lockfile dependencies  
+-`upgrade`:            upgrades all dependencies and syncs environment  
+-`init-projectfiles`:  sets up .gitignore, pyproject.toml, requirements.in, example.env, README.md  
+-`init-env`:           sets up .env from example.env  
+-`activate`:           activates venv container(only necessary if using PS5.x)  
+-`run`:                syncs the environment dependencies and runs main app (doesn't run anything by default)  
 
 ---
 
