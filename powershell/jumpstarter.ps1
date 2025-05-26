@@ -88,56 +88,56 @@ $readmeContent = Get-ReadmeContent
 #gitignore
 if (!(Test-Path ".gitignore")) {
     $gitignoreContent | Set-Content ".gitignore"
-    Write-Host "✅ Created .gitignore" -ForegroundColor Green
+    Write-Host "Created .gitignore" -ForegroundColor Green
 } elseif(-not (Get-Content .gitignore | Select-String "__pycache__")) {
     "`n$gitignoreContent" | Add-Content ".gitignore"
-    Write-Host "🔄 .gitignore already exists." -ForegroundColor Gray
+    Write-Host ".gitignore already exists." -ForegroundColor Gray
 } else {
-    Write-Host "⚠️ .gitignore already contains setup info. Skipping." -ForegroundColor Gray
+    Write-Host ".gitignore already contains setup info. Skipping." -ForegroundColor Gray
 }
 
 #pyproject
 if (!(Test-Path "pyproject.toml")) {
     $pyprojectContent | Set-Content "pyproject.toml"
-    Write-Host "✅ Created pyproject.toml" -ForegroundColor Green
+    Write-Host "Created pyproject.toml" -ForegroundColor Green
 } elseif(-not (Get-Content pyproject.toml | Select-String "my-uv-bootstrap")) {
     "`n$pyprojectContent" | Add-Content "pyproject.toml"
-    Write-Host "🔄 pyproject.toml already exists, appended." -ForegroundColor Gray
+    Write-Host "pyproject.toml already exists, appended." -ForegroundColor Gray
 } else {
-    Write-Host "⚠️ pyproject.toml already contains setup info. Skipping." -ForegroundColor Gray
+    Write-Host "pyproject.toml already contains setup info. Skipping." -ForegroundColor Gray
 }
 
 #requirements
 if (!(Test-Path "requirements.in")) {
     $requirementsContent | Set-Content "requirements.in"
-    Write-Host "✅ Created requirements.in" -ForegroundColor Green
+    Write-Host "Created requirements.in" -ForegroundColor Green
 } 
 elseif (-not (Get-Content requirements.in | Select-String "requests")) {
-    Write-Host "🔄 requirements.in already exists, appended." -ForegroundColor Gray
+    Write-Host "requirements.in already exists, appended." -ForegroundColor Gray
 } else {
-    Write-Host "⚠️ requirements.in already contains setup info. Skipping." -ForegroundColor Gray
+    Write-Host "requirements.in already contains setup info. Skipping." -ForegroundColor Gray
 }
 
 #.env.example
 if (!(Test-Path ".env.example")) {
     $envExampleContent | Set-Content ".env.example"
-    Write-Host "✅ Created .env.example" -ForegroundColor Green
+    Write-Host "Created .env.example" -ForegroundColor Green
 } elseif (-not (Get-Content .env.example | Select-String "API_KEY")) {
     "`n$envExampleContent" | Add-Content ".env.example"
-    Write-Host "🔄 .env.example already exists, appended." -ForegroundColor Gray
+    Write-Host ".env.example already exists, appended." -ForegroundColor Gray
 } else {
-    Write-Host "⚠️ .env.example already contains setup info. Skipping." -ForegroundColor Gray
+    Write-Host ".env.example already contains setup info. Skipping." -ForegroundColor Gray
 }
 
 #README.md
 if (!(Test-Path "README.md")) {
     $readmeContent | Set-Content "README.md"
-    Write-Host "✅ Created README.md" -ForegroundColor Green
+    Write-Host "Created README.md" -ForegroundColor Green
 }
 elseif (-not (Get-Content README.md | Select-String "My UV Project")) {
     "`n$readmeContent" | Add-Content "README.md"
-    Write-Host "📄 README.md already exists, appended." -ForegroundColor Yellow
+    Write-Host "README.md already exists, appended." -ForegroundColor Yellow
 }
 else {
-    Write-Host "⚠️ README.md already contains setup info. Skipping." -ForegroundColor Gray
+    Write-Host "README.md already contains setup info. Skipping." -ForegroundColor Gray
 }

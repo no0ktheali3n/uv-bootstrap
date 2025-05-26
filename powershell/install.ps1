@@ -8,10 +8,10 @@ $psMajor = $PSVersionTable.PSVersion.Major
 # Assign appropriate script based on PowerShell version
 if ($psMajor -ge 7) {
     $autoenvScript = "$PSScriptRoot\autoenv_hook.ps1"
-    Write-Host "🧠 PowerShell 7+ detected, using enhanced autoenv_hook.ps1" -ForegroundColor Cyan
+    Write-Host "PowerShell 7+ detected, using enhanced autoenv_hook.ps1" -ForegroundColor Cyan
 } else {
     $autoenvScript = "$PSScriptRoot\autoenv.ps1"
-    Write-Host "🧠 PowerShell 5.1 or below detected, using minimal autoenv.ps1" -ForegroundColor Yellow
+    Write-Host "PowerShell 5.1 or below detected, using minimal autoenv.ps1" -ForegroundColor Yellow
 }
 
 # Ensure profile directory exists
@@ -28,9 +28,9 @@ if (!(Test-Path $profilePath)) {
 $profileContent = Get-Content $profilePath -Raw
 if ($profileContent -notmatch [regex]::Escape($autoenvScript)) {
     Add-Content $profilePath "`n. '$autoenvScript'"
-    Write-Host "✅ Added autoenv script to PowerShell profile." -ForegroundColor Green
+    Write-Host "Added autoenv script to PowerShell profile." -ForegroundColor Green
 } else {
-    Write-Host "🔄 Autoenv script already present in profile." -ForegroundColor Gray
+    Write-Host "Autoenv script already present in profile." -ForegroundColor Gray
 }
 
 # calls setup.ps1 to copy utils\justfile to project root if not already present
@@ -38,6 +38,5 @@ $setupScript = "$PSScriptRoot\setup.ps1"
 if (Test-Path $setupScript) {
     & $setupScript
 } else {
-    Write-Host "⚠️  setup.ps1 not found — skipping project bootstrap." -ForegroundColor Yellow
+    Write-Host "setup.ps1 not found - skipping project bootstrap." -ForegroundColor Yellow
 }
-

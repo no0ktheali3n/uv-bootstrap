@@ -8,7 +8,7 @@ function Enable-VenvAutoActivate {
 
     foreach ($path in $venvPaths) {
         if (Test-Path $path) {
-            Write-Host "🐍 Auto-activating: $path" -ForegroundColor Green
+            Write-Host "Auto-activating: $path" -ForegroundColor Green
             & $path
             return
         }
@@ -17,7 +17,10 @@ function Enable-VenvAutoActivate {
 
 #hook checks for idle after cd and automatically activates venv if detected
 Register-EngineEvent PowerShell.OnIdle -SupportEvent -Action {
-    $global:lastLocation ??= Get-Location
+    if (-not $global:lastLocation) {
+        $global:lastLocation = Get-Location
+    }
+
     $newLocation = Get-Location
     if ($newLocation.Path -ne $global:lastLocation.Path) {
         $global:lastLocation = $newLocation

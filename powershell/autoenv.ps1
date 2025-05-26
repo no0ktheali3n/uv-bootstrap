@@ -8,11 +8,11 @@ function Enable-VenvAutoActivate {
 
     foreach ($path in $venvPaths) {
         if (Test-Path $path) {
-            Write-Host "🐍 Auto-activating: $path" -ForegroundColor Green
+            Write-Host "Auto-activating: $path" -ForegroundColor Green
             & $path
             return
         } else {
-            Write-Host "❌ No virtual environment found at: $path" -ForegroundColor Red
+            Write-Host "No virtual environment found at: $path" -ForegroundColor Red
         }
     }
 }

@@ -4,7 +4,7 @@ $justDest = "$PSScriptRoot\..\justfile"
 
 if (!(Test-Path $justDest)) {
     Copy-Item $justSource $justDest -Force
-    Write-Host "✅ Copied justfile to project root." -ForegroundColor Green
+    Write-Host "Copied justfile to project root." -ForegroundColor Green
 } else {
-    Write-Host "🔄 justfile already exists in root." -ForegroundColor Gray
+    Write-Host "justfile already exists in root." -ForegroundColor Gray
 }
