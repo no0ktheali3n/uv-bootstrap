@@ -1,6 +1,6 @@
-# 🧬 UV Bootstrap
+# 🧬 UV Bootstrap 
 
-A lightweight, reproducible Python development environment using [`uv`](https://github.com/astral-sh/uv) for dependency management and virtual environments in Windows.  Includes QoL profiles compatibile with Powershell 5 and 7.1+.  This setup also makes use of Just commands and will likely implement FZF in a later version. 
+A lightweight, reproducible Python development environment using [`uv`](https://github.com/astral-sh/uv) for dependency management and virtual environments in Windows.  Includes QoL profiles compatibile with Powershell 5 and 7.1+.  This setup also makes use of Just commands and will likely implement FZF in a later version.  See docs/QUICKSTART.md for quick environment setup process.
 
 ---
 
@@ -27,7 +27,7 @@ my-uv-project/
    └── requirements.in          # Top-level editable dependencies template
    
 ├── utils/                      # local Python workflow tools/scripts
-│   └── justfile
+│   └── justfile                # Task runner commands
 ```
 
 ---
@@ -36,7 +36,7 @@ my-uv-project/
 
 1. **Clone the repo**
 ```bash
-   git clone https://github.com/no0ktheali3n/dev-bootstrap.git
+   git clone https://github.com/no0ktheali3n/uv-bootstrap.git
    cd dev-bootstrap
 ```
 
@@ -61,7 +61,7 @@ my-uv-project/
 ```
 
 
-## Manual Setup Steps (now automated with \`just init-projectfiles\`)
+## Manual Setup Steps (now automated with `just init-projectfiles`, executed automatically via install.ps1 process)
 
 ```powershell
 
@@ -147,7 +147,7 @@ DEBUG=true
 ## 🧪 To enable auto-activation of `.venv` or `.uv` environments in PowerShell 5 or 7:
 
 ```powershell
-irm https://raw.githubusercontent.com/no0ktheali3n/dev-bootstrap/main/powershell/install.ps1 | iex
+irm https://raw.githubusercontent.com/no0ktheali3n/uv-bootstrap/main/powershell/install.ps1 | iex
 ```
 
 or if installing locally (after clone)...
@@ -194,14 +194,14 @@ scoop install fzf     # Fuzzy finder (for optional interactive command selection
 ## 🔄 Workflow
 
 ### ➕ Add a new dependency
-1. Append it to \`requirements.in\`  
-2. Run (or use \`just compile\` then \`just sync`\):
+1. Append it to `requirements.in`  
+2. Run (or use `just compile` then `just sync`):
    ```bash
    uv pip compile requirements.in > requirements.lock.txt
    uv pip sync requirements.lock.txt
    ```
 
-### 🔼 Upgrade all dependencies (or use \`just upgrade\`)
+### 🔼 Upgrade all dependencies (or use `just upgrade`)
 ```bash
 uv pip compile --upgrade requirements.in > requirements.lock.txt
 uv pip sync requirements.lock.txt
@@ -211,12 +211,12 @@ uv pip sync requirements.lock.txt
 
 ## 📦 Environment Variables
 
-Copy the \`.env.example\` and customize (or use \`just init-env\` for this step):
+Copy the `.env.example` and customize (or use `just init-env` for this step):
 ```bash
 cp .env.example .env
 ```
 
-Use a library like \`python-dotenv\` to load them into your Python runtime.
+Use a library like `python-dotenv` to load them into your Python runtime.
 
 ---
 
