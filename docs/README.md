@@ -165,7 +165,6 @@ powershell -ExecutionPolicy Bypass -File powershell\install.ps1
 ```
 
 
-
 ## 🧪 To enable streamlined command execution with [`just`](https://github.com/casey/just) and fuzzy task selection with [`fzf`](https://github.com/junegunn/fzf), run the following in PowerShell:
 
 
