@@ -15,7 +15,9 @@ my-uv-project/
 ├── powershell/                 # Shell enhancements, autoenv, profiles
 │   ├── autoenv_ps5.ps1         # manual trigger script, Enable-VenvAutoActivate from project root directory (PS 5.1+ compatible)
 │   ├── autoenv_ps7.ps1         # profile loader that autochecks for venv, executes venv/Scripts/activate if present. (PS7.1+)
-│   └── install.ps1             #detects PowerShell version and installs appropriate autoenv as PowerShell profile.
+│   ├── install.ps1             # detects PowerShell version and installs appropriate autoenv as PowerShell profile, calls setup.
+|   ├── jumpstarter.ps1         # generates .gitignore, .env.example, pyproject.toml, requirements.in, and readme in root directory
+|   └── setup.ps1               # copies justfile from utils/ into root directory and initiates jumpstarter.
 
 ├── templates/                  # Starter boilerplates or scaffolds
    ├── .env.example             # Environment variable template

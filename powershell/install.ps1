@@ -7,11 +7,11 @@ $psMajor = $PSVersionTable.PSVersion.Major
 
 # Assign appropriate script based on PowerShell version
 if ($psMajor -ge 7) {
-    $autoenvScript = "$PSScriptRoot\autoenv_hook.ps1"
-    Write-Host "PowerShell 7+ detected, using enhanced autoenv_hook.ps1" -ForegroundColor Cyan
+    $autoenvScript = "$PSScriptRoot\autoenv_ps7.ps1"
+    Write-Host "PowerShell 7+ detected, using enhanced autoenv" -ForegroundColor Cyan
 } else {
-    $autoenvScript = "$PSScriptRoot\autoenv.ps1"
-    Write-Host "PowerShell 5.1 or below detected, using minimal autoenv.ps1" -ForegroundColor Yellow
+    $autoenvScript = "$PSScriptRoot\autoenv_ps5.ps1"
+    Write-Host "PowerShell 5.1 or below detected, using minimal autoenv" -ForegroundColor Yellow
 }
 
 # Ensure profile directory exists
