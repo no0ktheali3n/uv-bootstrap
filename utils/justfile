@@ -1,5 +1,9 @@
 # Justfile — task runner for uv-powered Python projects
 
+# running 'just' without arguments launches list of just commands using fzf
+default:
+    @just --summary | fzf | xargs just
+
 # Compile the lockfile from requirements.in
 compile:
 	uv pip compile requirements.in > requirements.lock.txt
