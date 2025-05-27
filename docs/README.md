@@ -1,6 +1,6 @@
 # 🧬 UV Bootstrap
 
-A lightweight, reproducible Python development environment using [`uv`](https://github.com/astral-sh/uv) for dependency management and virtual environments.  Includes QoL profiles compatibile with Powershell 5 and 7.1+.  This setup also makes use of Just commands and will likely implement FZF in a later version. 
+A lightweight, reproducible Python development environment using [`uv`](https://github.com/astral-sh/uv) for dependency management and virtual environments in Windows.  Includes QoL profiles compatibile with Powershell 5 and 7.1+.  This setup also makes use of Just commands and will likely implement FZF in a later version. 
 
 ---
 
@@ -8,11 +8,9 @@ A lightweight, reproducible Python development environment using [`uv`](https://
 
 ```plaintext
 my-uv-project/
-├── .gitignore                  # Ignore venv, lockfiles, cache
-├── pyproject.toml              # Project metadata (optional)
-├── requirements.in             # Top-level editable dependencies
-├── .env.example                # Environment variable template
-├── README.md                   # Project overview
+├── docs/                       # project documents (readme, etc)
+│   ├── QUICKSTART.md           # Quickstart guide to set up environment
+│   └── README.md               # Project overview + setup guide
 
 ├── powershell/                 # Shell enhancements, autoenv, profiles
 │   ├── autoenv_ps5.ps1         # manual trigger script, Enable-VenvAutoActivate from project root directory (PS 5.1+ compatible)
@@ -20,8 +18,12 @@ my-uv-project/
 │   └── install.ps1             #detects PowerShell version and installs appropriate autoenv as PowerShell profile.
 
 ├── templates/                  # Starter boilerplates or scaffolds
-│   └── main_template.py
-
+   ├── .env.example             # Environment variable template
+   ├── .gitignore               # Ignore venv, lockfiles, cache template
+   ├── pyproject.toml           # Project metadata (optional) template
+   ├── README.md                # Project overview starter template
+   └── requirements.in          # Top-level editable dependencies template
+   
 ├── utils/                      # local Python workflow tools/scripts
 │   └── justfile
 ```
