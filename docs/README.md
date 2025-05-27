@@ -1,6 +1,5 @@
 # 🧬 UV Bootstrap 
-![License](https://img.shields.io/github/license/no0ktheali3n/uv-bootstrap?style=flat-square)
-[![License](https://img.shields.io/github/license/no0ktheali3n/uv-bootstrap?cacheSeconds=60)](https://github.com/no0ktheali3n/uv-bootstrap/blob/main/LICENSE)
+[![License](https://img.shields.io/github/license/no0ktheali3n/uv-bootstrap?cacheSeconds=60)](https://github.com/no0ktheali3n/uv-bootstrap/blob/main/docs/LICENSE)
 ![Last Commit](https://img.shields.io/github/last-commit/no0ktheali3n/uv-bootstrap?style=flat-square)
 
 A lightweight, reproducible Python development environment using [`uv`](https://github.com/astral-sh/uv) for dependency management and virtual environments in Windows.  Includes QoL profiles compatibile with Powershell 5 and 7.1+.  This setup also makes use of Just commands and will likely implement FZF in a later version.  See docs/QUICKSTART.md for quick environment setup process.
