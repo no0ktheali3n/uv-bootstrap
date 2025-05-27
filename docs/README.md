@@ -1,5 +1,5 @@
 # 🧬 UV Bootstrap  
-[![Version](https://img.shields.io/github/v/tag/no0ktheali3n/uv-bootstrap?style=flat-square)](https://github.com/no0ktheali3n/uv-bootstrap/tags)
+[![Version](https://img.shields.io/github/v/tag/no0ktheali3n/uv-bootstrap?label=version&sort=semver&style=flat-square)](https://github.com/no0ktheali3n/uv-bootstrap/tags)
 [![License](https://img.shields.io/github/license/no0ktheali3n/uv-bootstrap?cacheSeconds=60)](https://github.com/no0ktheali3n/uv-bootstrap/blob/main/docs/LICENSE)
 ![Last Commit](https://img.shields.io/github/last-commit/no0ktheali3n/uv-bootstrap?style=flat-square)
 
