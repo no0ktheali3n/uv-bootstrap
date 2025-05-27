@@ -1,4 +1,5 @@
-# 🧬 UV Bootstrap 
+# 🧬 UV Bootstrap  
+[![Version](https://img.shields.io/github/v/tag/no0ktheali3n/uv-bootstrap?style=flat-square)](https://github.com/no0ktheali3n/uv-bootstrap/tags)
 [![License](https://img.shields.io/github/license/no0ktheali3n/uv-bootstrap?cacheSeconds=60)](https://github.com/no0ktheali3n/uv-bootstrap/blob/main/docs/LICENSE)
 ![Last Commit](https://img.shields.io/github/last-commit/no0ktheali3n/uv-bootstrap?style=flat-square)
 
@@ -11,6 +12,7 @@ A lightweight, reproducible Python development environment using [`uv`](https://
 ```plaintext
 my-uv-project/
 ├── docs/                       # project documents (readme, etc)
+│   ├── LICENSE                 # Apache 2.0 license
 │   ├── QUICKSTART.md           # Quickstart guide to set up environment
 │   └── README.md               # Project overview + setup guide
 
