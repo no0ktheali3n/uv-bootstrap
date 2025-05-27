@@ -13,8 +13,8 @@ if (!(Test-Path $justDest)) {
 $jumpstarter = "$PSScriptRoot\jumpstarter.ps1"
 
 if (Test-Path $jumpstarter) {
-    Write-Host "🚀 Bootstrapping project files with jumpstarter.ps1..." -ForegroundColor Cyan
+    Write-Host "Bootstrapping project files with jumpstarter.ps1..." -ForegroundColor Cyan
     powershell -ExecutionPolicy Bypass -File $jumpstarter
 } else {
-    Write-Host "⚠️ jumpstarter.ps1 not found — skipping project file generation." -ForegroundColor Yellow
+    Write-Host "jumpstarter.ps1 not found - skipping project file generation." -ForegroundColor Yellow
 }
