@@ -13,12 +13,15 @@ No admin rights needed:
 ```powershell
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
 irm get.scoop.sh | iex
+
+#if that throws an error try irm get.scoop.sh | iex by itself
 ```
 
-### Step 2:  Install git, just, fzf*
+### Step 2:  Install git, uv, just, fzf*
 
 ```powershell
 scoop install git       # necessary to clone repos
+scoop install uv
 scoop install just      # simplified task runner
 scoop install fzf       # [Optional] Fuzzy finder for interactive command selections
 ```
